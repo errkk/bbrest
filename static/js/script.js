@@ -1,4 +1,4 @@
-/*global console, alert, Backbone, $, jQuery */
+/*global console, alert, Backbone, $, jQuery, _ */
 /*jslint browser: true, indent: 4, sloppy: true, regexp: true, plusplus: true, continue: true, white: true, smarttabs: false */
 
 $(function(){
@@ -39,14 +39,16 @@ $(function(){
 
 		done: function() {
 			return this.filter(function(todo){ return todo.get('done'); });
-	    },
+		},
 
-	    remaining: function() {
+		remaining: function() {
 			return this.without.apply(this, this.done());
 		},
 
 		nextOrder: function() {
-			if (!this.length) return 1;
+			if (!this.length){
+				return 1;
+			}
 			return this.last().get('order') + 1;
 		},
 
@@ -84,7 +86,7 @@ $(function(){
 		},
 
 		render: function() {
-			$(this.el).html(this.template(this.model.toJSON()));
+			this.$el.html(this.template(this.model.toJSON()));
 			this.setText();
 			return this;
 		},
@@ -131,64 +133,70 @@ $(function(){
 	 */	
   window.AppView = Backbone.View.extend({
 
-    el: $("#todoapp"),
+	el: $("#todoapp"),
 
-    statsTemplate: _.template($('#stats-template').html()),
+	statsTemplate: _.template($('#stats-template').html()),
 
-    events: {
-      "keypress #new-todo":  "createOnEnter",
-      "keyup #new-todo":     "showTooltip",
-      "click .todo-clear a": "clearCompleted"
-    },
+	events: {
+	  "keypress #new-todo":  "createOnEnter",
+	  "keyup #new-todo":     "showTooltip",
+	  "click .todo-clear a": "clearCompleted"
+	},
 
-    initialize: function() {
-      this.input    = this.$("#new-todo");
+	initialize: function() {
+	  this.input    = this.$("#new-todo");
 
-      Todos.bind('add',   this.addOne, this);
-      Todos.bind('reset', this.addAll, this);
-      Todos.bind('all',   this.render, this);
+	  Todos.bind('add',   this.addOne, this);
+	  Todos.bind('reset', this.addAll, this);
+	  Todos.bind('all',   this.render, this);
 
-      Todos.fetch();
-    },
+	  Todos.fetch();
+	},
 
-    render: function() {
-      this.$('#todo-stats').html(this.statsTemplate({
-        total:      Todos.length,
-        done:       Todos.done().length,
-        remaining:  Todos.remaining().length
-      }));
-    },
+	render: function() {
+	  this.$('#todo-stats').html(this.statsTemplate({
+		total:      Todos.length,
+		done:       Todos.done().length,
+		remaining:  Todos.remaining().length
+	  }));
+	},
 
-    addOne: function(todo) {
-      var view = new TodoView({model: todo});
-      $("#todo-list").append(view.render().el);
-    },
+	addOne: function(todo) {
+	  var view = new TodoView({model: todo});
+	  $("#todo-list").append(view.render().el);
+	},
 
-    addAll: function() {
-      Todos.each(this.addOne);
-    },
+	addAll: function() {
+	  Todos.each(this.addOne);
+	},
 
-    createOnEnter: function(e) {
-      var text = this.input.val();
-      if (!text || e.keyCode !== 13) return;
-      Todos.create({text: text});
-      this.input.val('');
-    },
+	createOnEnter: function(e) {
+		var text = this.input.val();
+		if (!text || e.keyCode !== 13){
+			return;
+		}
+		Todos.create({text: text});
+		this.input.val('');
+	},
 
-    clearCompleted: function() {
-      _.each(Todos.done(), function(todo){ todo.destroy(); });
-      return false;
-    },
+	clearCompleted: function() {
+	  _.each(Todos.done(), function(todo){ todo.destroy(); });
+	  return false;
+	},
 
-    showTooltip: function(e) {
-      var tooltip = this.$(".ui-tooltip-top");
-      var val = this.input.val();
-      tooltip.fadeOut();
-      if (this.tooltipTimeout) clearTimeout(this.tooltipTimeout);
-      if (val === '' || val === this.input.attr('placeholder')) return;
-      var show = function(){ tooltip.show().fadeIn(); };
-      this.tooltipTimeout = _.delay(show, 1000);
-    }
+	showTooltip: function(e) {
+		var tooltip = this.$(".ui-tooltip-top"),
+		val = this.input.val();
+		tooltip.fadeOut();
+		if (this.tooltipTimeout){
+			clearTimeout(this.tooltipTimeout);
+		}
+		if (val === '' || val === this.input.attr('placeholder')){
+			return;
+		}
+		var show = function(){ tooltip.show().fadeIn(); };
+		this.tooltipTimeout = _.delay(show, 1000);
+	}
 
   });
 
