@@ -1,0 +1,338 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size:62.5%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.5; }
+
+::-moz-selection { background: #00729d; color: #fff; text-shadow: none; }
+::selection { background: #00729d; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+/*
+ * _Colours_
+ * Dark Blue    00729d
+ * Light Blue   00adef
+ * Dark Grey    343434
+ */
+
+/*
+ * Generic Layout
+ * ===========================================================================================
+ */
+.wrapper{ padding:0 10px; margin:0 auto; position:relative;} 
+#content{overflow: hidden;}
+
+/*
+ * Typography + Colours
+ * ===========================================================================================
+ */
+body{color:#444; font-family:Helvetica, Arial, sans-serif; }
+h1{font-size:3em;}
+h2{text-transform: uppercase; color:#00729d; font-size:1.8em; margin:0.5em 0 0.2em;}
+h3{}
+h4{}
+p{font-size:1.2em;}
+a{text-decoration:none; color:#00729d;}
+
+/* Image Cropping */
+.img-crop,
+.img-crop img{border-radius:5px;}
+.img-crop img{width:100%;}
+.img-crop{overflow: hidden; height:150px; float:left; vertical-align: top; margin:0 3% 5px 0; width:46%;}
+
+/*
+ * Sections
+ * ===========================================================================================
+ */
+
+ /* Header */
+.site-header .wrapper{ background:url(http://parkinsons.localhost/img/wedge-top.png) 10px 0 no-repeat; padding-top:50px;}
+/* Tagline */
+.txt-what-would-a-cure-mean-to-you{font-size:3em; color:#00adef;}
+
+.site-header .parkilink{position: absolute; top:5px; right:10px; font-size:1.2em;}
+.site-header .parkilink:after{content:'▸'; font-size: 2em; vertical-align:middle;}
+
+/* Text Replacement */
+.site-header{text-align:center;}
+.site-header h1{width:220px; height: 108px; overflow: hidden; margin: 0; padding:0; display: inline-block;}
+.site-header h1 a{display: inline-block;}
+.site-header h1 a span:before{content:url(http://parkinsons.localhost/img/txt-parkinsons.png); margin:0; display:inline-block;}
+
+
+/* Content */
+#content #pri{border-top:10px solid #00adef; padding:2em 0; margin:1em 20px 0 0;}
+#content .intro{ border-bottom:10px solid #00adef; overflow:hidden; padding:0 0 1em; margin:0 0 2em;} 
+#content .intro .img-crop{ float:left;} 
+#content .intro h2,
+#content .intro p{ clear:left;} 
+
+/* Image Listing */
+.listing{padding-bottom:2em; overflow: hidden;}
+
+
+/* Social */
+.social-share{border-top:10px solid #00adef; padding:15px 0; clear:left;}
+
+/* Pagination Links */
+.pagination{text-align:center; padding:0; position: relative;}
+  .pagination li{display: inline;}
+  .pagination li a{display: inline-block; background:#00adef; color:#fff; font-size:1.5em; font-weight:bold; height:20px; padding:0.7em 1em; margin:0 0.3em;}
+  .pagination li a:focus,
+  .pagination li a:hover{background:#00729d;}
+
+  .pagination li.next{position:absolute; right:0;}
+  .pagination li.prev{position:absolute; left:0;}
+  .pagination li.next a,
+  .pagination li.prev a{margin:0; background:url(http://parkinsons.localhost/img/arrows.png) 0 -43px no-repeat; padding:0.7em 0; width:27px;}
+  .pagination li.next a span,
+  .pagination li.prev a span{position: absolute;left:-999px;}
+  .pagination li.next a{background-position: 100% -43px;}
+  .pagination li.next a:hover,
+  .pagination li.next a:focus{background-position: 100% 0;}
+  .pagination li.prev a:hover,
+  .pagination li.prev a:focus{background-position: 0 0;}
+  
+  .pagination li.current a{background:#343434;}
+
+
+
+
+/* Aside */
+.site-aside{margin-top:40px;}
+/* CTA Links */
+.cta{display:inline-block;cursor:pointer; color:#fff; padding:15px 17px; font-size:2em; font-weight:bold; border-radius:5px; line-height:1em; background:#00adef url(http://parkinsons.localhost/img/bg-cta.png) 100% 100% no-repeat; }
+  .cta em{font-weight:normal; font-style: normal;}
+  .cta:hover,
+  .cta:focus{background-color:#00729d; color:#fff;}
+
+/* Tags List */
+.tags{padding:0;}
+  .tags li{list-style:none; font-size:1.2em; line-height:2.5em;  display: inline-block;}
+  .tags li a{padding:0.5em; background:#343434; color:#fff;}
+  .tags li a:hover,
+  .tags li a:hover{background:#00729d;}
+
+/* Site Footer */
+.site-footer .wrapper{ line-height:1.2em; color:#fff; padding:30px 0 10px; text-align: center; background:#00adef url(http://parkinsons.localhost/img/bg-footer.png) 100% 0 no-repeat;}
+  .site-footer a{ color:#fff; }
+  .site-footer ul{padding:0; font-size:1.2em; font-weight:bold;}
+  .site-footer ul li{ display: inline; border-right:1px solid #fff; padding-right:0.8em; margin-right:0.5em;}
+  .site-footer ul li.last{border:none; padding:0; margin:0;}
+
+  .site-footer p{font-size:1em;}
+
+/* Social Network Links */
+.social{}
+  .social{margin:0 -3px; padding:0;}
+  .social li{display: inline-block; width:32px; overflow: hidden; height:32px; margin:0 3px;}
+  .social li span{display: inline-block; height:100%; width:100%;}
+  .social li span:before{content:url(http://parkinsons.localhost/img/ico-social.png); display: inline-block; width:32px;}
+  .social .twitter span:before{margin-left:0;}
+  .social .facebook span:before{margin-left:-42px;}
+  .social .flickr span:before{margin-left:-84px;}
+  .social .youtube span:before{margin-left:-126px;}
+
+/* Permalink Page */
+.perma{}
+  .perma #pri img{border-radius:5px; width:100%;}
+  .perma #pri header{overflow:hidden; border-bottom:1px solid #ccc;}
+  .perma #pri header h1{margin:0; line-height:1em; color:#00adef; padding:0;}
+  .perma #pri header h1 small{display: block; font-size:0.5em; color:#444;}
+  .perma #pri header p{margin:0.5em 0 1em; font-size:1.4em;}
+
+
+/* Iframe for form */
+.iframepage #pri{width:100%;}
+#formIframe{width:100%; height:1000px; border:none; overflow: hidden;}
+  
+
+/*
+ * Overrides for Desktops and larger screens
+ * ===========================================================================================
+ */
+@media only screen and (min-width: 500px) {
+  /* Wrap intro text and image */
+  .img-crop{max-height: 150px; width:30%;}
+  #content .intro h2,
+  #content .intro p{ padding-left:30%; clear:none;} 
+}
+
+
+@media only screen and (min-width: 830px) {
+  /* Bring in image replacement for headline */
+  .txt-what-would-a-cure-mean-to-you{width:540px; overflow: hidden; height:100px; display: inline-block;}
+  .txt-what-would-a-cure-mean-to-you:before{content:url(http://parkinsons.localhost/img/txt-what-would-a-cure-mean-to-you.png); margin:0; padding:0; display: inline-block;}
+}
+
+
+@media only screen and (min-width: 960px) {
+
+
+  .wrapper{width:960px;}
+  
+  .txt-what-would-a-cure-mean-to-you{float:left;}
+  .site-header h1{float: right; margin-right:30px;}
+  .site-header{overflow: hidden; padding-bottom:30px;}
+  
+  /* 2 Col Layout */
+  #pri{width:690px; float:left; margin:0 40px 0 0;}
+  .site-aside{float:left; width:220px; margin:0;}
+
+  /* Bigger Images */
+  .img-crop{max-height: 150px; margin:5px 10px;}
+  #content .intro h2,
+  #content .intro p{ padding-left:240px;} 
+
+  .pagination{margin-bottom:150px;}
+
+  /* Aside Col */
+  .cta{ display: block; text-align:right; margin-bottom:10px;}
+    .cta em{display:block;}
+    .cta.large{padding-top:60px;}
+
+    .tags li{display: block;}
+
+
+  /* Permalink Page */
+  .perma #pri img{width:440px; float:left; margin:0 20px 20px 0;}
+  .perma #pri header{margin:-1.5em 0 2em; float: left; width:230px;}
+
+  /* Footer */
+  .site-footer .wrapper{text-align:right;}
+  .site-footer .wrapper ul,
+  .site-footer .wrapper p{margin-right:20px;}
+
+}
+
+
+/*
+ * Legacy Browsers
+ * ===========================================================================================
+ */
+/* Apply Desktop Overrides */
+.lt-ie9 .img-crop{max-height: 150px; width:30%;}
+.lt-ie9 #content .intro h2,
+.lt-ie9 #content .intro p{ padding-left:30%; clear:none;} 
+
+.lt-ie9 .txt-what-would-a-cure-mean-to-you{width:540px; overflow: hidden; height:100px; display: inline-block;}
+.lt-ie9 .txt-what-would-a-cure-mean-to-you:before{content:url(http://parkinsons.localhost/img/txt-what-would-a-cure-mean-to-you.png); margin:0; padding:0; display: inline-block;}
+
+.lt-ie9 .wrapper{width:960px;}
+
+.lt-ie9 .site-header{overflow: hidden; padding-bottom:30px;}
+.lt-ie9 .txt-what-would-a-cure-mean-to-you{float:left;}
+.lt-ie9 .site-header h1{float: right; margin-right:10px;}
+
+
+.lt-ie9 #pri{width:690px; float:left; margin:0 40px 0 0;}
+.lt-ie9 .site-aside{float:left; width:220px; margin:0;}
+
+.lt-ie9 .img-crop{max-height: 150px; margin:5px 10px;}
+.lt-ie9 #content .intro h2,
+.lt-ie9 #content .intro p{ padding-left:240px;} 
+.lt-ie9 .pagination{margin-bottom:150px;}
+
+.lt-ie9 .cta{ display: block; text-align:right; margin-bottom:10px;}
+  .lt-ie9 .cta em{display:block;}
+  .lt-ie9 .cta.large{padding-top:60px;}
+.lt-ie9.tags li{display: block;}
+
+.lt-ie9 .site-footer .wrapper{text-align:right;}
+  .lt-ie9 .site-footer .wrapper ul,
+  .lt-ie9 .site-footer .wrapper p{margin-right:20px;}
+
+  /* Permalink Page */
+.lt-ie9 .perma #pri img{width:440px; float:left; margin:0 20px 20px 0;}
+.lt-ie9 .perma #pri header{margin:-1.5em 0 2em; float: left; width:230px;}
+
+
+/* Image replacement replacements */
+.lt-ie8 .txt-what-would-a-cure-mean-to-you{text-indent:-9999px; background:url(http://parkinsons.localhost/img/txt-what-would-a-cure-mean-to-you.png) 0 0 no-repeat;}
+.lt-ie8 .site-header h1{ text-indent:-9999px; background:url(http://parkinsons.localhost/img/txt-parkinsons.png) 0 0 no-repeat;}
+
+.lt-ie8 .social li a{cursor: pointer;}
+.lt-ie8 .social li span{ display: block; height:32px; text-indent: -9999px; background:url(http://parkinsons.localhost/img/ico-social.png) 0 0 no-repeat;}
+.lt-ie8 .social .twitter span{background-position:0 0;}
+.lt-ie8 .social .facebook span{background-position:-42px 0;}
+.lt-ie8 .social .flickr span{background-position:-84px 0;}
+.lt-ie8 .social .youtube span{background-position:-126px 0;}
+
+/* Inline Block Fix */
+.lt-ie9 .social li{display: inline-block;}
+.lt-ie8 .social li{display: inline;}
+
+
+
+
+/*
+ * Print
+ * ===========================================================================================
+ */
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
